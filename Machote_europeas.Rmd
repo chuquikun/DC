@@ -1,0 +1,66 @@
+---
+title: "KIKO"
+output:
+  word_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Títulos Opcionales
+
+
+De Compra en Efectivo, Europeos, con Rendimiento Limitado, con Porcentaje Retornable de Prima de Emisión, Referidos al SPDR Dow Jones Industrial Average ETF Trust  (DIA *).
+Estos Títulos Opcionales tienen un porcentaje retornable de Prima de Emisión del 100.0000% en la Fecha de Vencimiento, es decir, tienen una pérdida máxima del 0.0000% de la Prima Pagada. 
+
+##A. Datos Generales
+
+Bla,bla,bla,bla:
+
+```{r inputs, include = FALSE}
+setwd('C:\\Users\\MB54647\\Documents\\Fernando\\R_scripts\\Call')
+source('utils.R')
+reset()
+add_opts(0,0,1,0)
+add_opts(1,1,0,0)
+add_opts(1.1,-1,0,0)
+add_opts(1,-1,0,0,0)#put
+add_opts(.8,1,0,0,0)#put
+add_opts(.8,0,-.4,0,0)#put
+add_opts(.8,1,0,0,0)#put
+
+restructurar()
+texto_pago()
+
+```
+
+```{r table, echo=FALSE}
+restructurados$tabla%>%knitr::kable()
+
+```
+
+Bla,bla,bla,bla.
+
+## Derechos de Ejercicio
+
+```{r ejercicio, echo=FALSE}
+
+print(textos[1:(length(textos)-1)])
+
+```
+
+## Gráfico
+
+```{r grafico, echo=FALSE}
+tabla_grafico()
+
+```
+
+## Tabulado
+
+```{r tabulado, echo=FALSE}
+df_pagos%>%knitr::kable()
+
+```
